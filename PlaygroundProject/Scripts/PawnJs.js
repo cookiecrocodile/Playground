@@ -9,7 +9,7 @@
 
             for (var i = 0; i < data.length; i++) {
 
-                var option = $("<option></option>").text(data[i].Type +": " + data[i].Hp);
+                var option = $("<option></option>").text(data[i].Type);
                 $("#pawnlist").append(option);
 
             }

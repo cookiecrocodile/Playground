@@ -7,15 +7,19 @@
         success: function (data) {
            
 
+            var addThis = "<tr><th>Rank Name</th></tr>"
+            
             for (var i = 0; i < data.length; i++) {
 
-                var listitem = $("<li></li>").text(data[i].RankName);
-                $("#rankList").append(listitem);
+                var tablerow = "<tr><td>" + data[i].RankName + "</td></tr>"
+                addThis += tablerow;
 
             }
 
+            $("#rankTable").html(addThis);
 
         },
+
         error: function (jqHXR, statusText, errorThrown) {
             $("#rightDiv").html("Something went wrong\n" + statusText + "\n" + errorThrown);
         }

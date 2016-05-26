@@ -59,7 +59,7 @@ namespace PlaygroundProject.Controllers
                         db.SaveChanges();
                        
                     }
-                    return View("Index");
+                    return Redirect("Index");
                 }
             }
             catch (Exception)
@@ -126,6 +126,13 @@ namespace PlaygroundProject.Controllers
 
         public ActionResult Pawns()
         {
+            string btn = Request.Form.Get("pawnRequest");
+            string choice = Request.Form.Get("pawnlist");
+
+            if (btn != null)
+            {
+                ViewBag.Choice = choice;
+            }
 
             return View();
         }

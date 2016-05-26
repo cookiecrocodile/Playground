@@ -1,9 +1,12 @@
-﻿<h1>Pawns</h1>
-
-<select id="pawnlist">
-
-</select>
-
+﻿<h2>Pawns</h2>
+<form method="post" action="/Home/Pawns">
+    <select id="pawnlist" name="pawnlist"></select>
+    <button id="pawnRequest" name="pawnRequest" class="btn btn-default" type="submit" value="submit">Test Request</button>
+</form>
+@if (ViewBag.Choice !=null)
+{
+   <p>Last choice: @ViewBag.Choice</p> 
+}
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/PawnJs.js"></script>
