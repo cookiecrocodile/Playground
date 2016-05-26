@@ -1,0 +1,52 @@
+﻿@model PlaygroundProject.Models.Player
+
+@*@{ 
+    var pawns = (List<Pawn>)TempData["Pawns"];
+    var ranks = TempData["Pawns"];
+}*@
+
+
+
+@using (Html.BeginForm("AddPlayer", "Home", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Add Player</h4>
+       
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>                        
+       
+        @*@if (ViewBag.Ranks != null)
+        {
+            @Html.DropDownList("Ranks")
+        }*@
+
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Rank, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Rank, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rank, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <!--Testa att lägga till en dropdown för att lägga till pawns till spelaren-->
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

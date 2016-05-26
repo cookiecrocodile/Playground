@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+   
+}
+
+<h2>Index</h2>
+
+
+@if (ViewBag.Error == null)
+{
+    <p>Number of players: @ViewBag.NumPlayers</p>
+    <p>Number of pawns: @ViewBag.NumPawns</p>
+    <p>Number of ranks: @ViewBag.NumRanks</p>
+}
+else
+{
+    <p>@ViewBag.Error</p>
+}
+
+
+
+@Html.Partial("_AddRankPartial")
+
+
+@Html.Partial("_AddPawn")
+
+@Html.Partial("_AddPlayer")
