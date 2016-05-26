@@ -1,0 +1,3 @@
+# Playground
+
+Just trying stuff out: MVC, Entity, ajax...
